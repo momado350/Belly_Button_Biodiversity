@@ -16,6 +16,9 @@ function buildPlot(id) {
     // Getting the top 10 
     var samplevalues = samples.sample_values.slice(0, 10).reverse();
 
+    // get only top 10 otu ids for the plot OTU and reversing it. 
+    var OTU_top = (samples.otu_ids.slice(0, 10)).reverse();
+
 
 
 
