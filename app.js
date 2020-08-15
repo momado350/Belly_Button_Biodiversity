@@ -13,6 +13,9 @@ function buildPlot(id) {
         
     console.log(samples);
 
+    // Getting the top 10 
+    var samplevalues = samples.sample_values.slice(0, 10).reverse();
+
 
 
 
