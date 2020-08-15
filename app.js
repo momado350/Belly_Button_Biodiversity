@@ -73,6 +73,13 @@ function buildPlot(id) {
         text: samples.otu_labels
 
     };
+
+    // set the layout for the bubble plot
+    var layout_b = {
+        xaxis:{title: "OTU ID"},
+        height: 600,
+        width: 1000
+    };
     
 
 
