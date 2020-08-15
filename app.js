@@ -80,6 +80,13 @@ function buildPlot(id) {
         height: 600,
         width: 1000
     };
+
+    // creating data variable 
+    var data1 = [trace1];
+  
+    // create the bubble plot
+    Plotly.newPlot("bubble", data1, layout_b); 
+
     
 
 
