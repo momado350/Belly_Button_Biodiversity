@@ -56,7 +56,12 @@ function buildPlot(id) {
         }
     };
 
-
+    // create the bar plot
+    Plotly.newPlot("bar", data, layout);
+  
+    //console.log(`ID: ${samples.otu_ids}`)
+  
+    
 
 
 
