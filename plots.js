@@ -1,3 +1,4 @@
+// create buildmetadata function
 function buildMetadata(sample) {
     d3.json("samples.json").then((data) => {
       var metadata = data.metadata;
@@ -21,7 +22,8 @@ function buildMetadata(sample) {
       buildGauge(result.wfreq);
     });
   }
-
+  
+  // create buildcharts function
   function buildCharts(sample) {
     d3.json("samples.json").then((data) => {
       var samples = data.samples;
@@ -75,7 +77,9 @@ function buildMetadata(sample) {
       Plotly.newPlot("bar", barData, barLayout);
     });
   }
+  
 
+  // create init functon
   function init() {
     // Grab a reference to the dropdown select element
     var selector = d3.select("#selDataset");
@@ -97,7 +101,8 @@ function buildMetadata(sample) {
       buildMetadata(firstSample);
     });
   }
-
+  
+  // create optionChanged function
   function optionChanged(newSample) {
     // Fetch new data each time a new sample is selected
     buildCharts(newSample);
@@ -106,3 +111,4 @@ function buildMetadata(sample) {
   
   // Initialize the dashboard
   init();
+  
