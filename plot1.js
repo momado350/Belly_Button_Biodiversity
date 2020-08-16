@@ -91,3 +91,8 @@ function buildGauge(wfreq) {
     Plotly.newPlot(GAUGE, data, layout);
   }
   
+  function getuserInput(){
+      var userInput;
+      if userInput <= length.data
+      console.log(data)
+  }
