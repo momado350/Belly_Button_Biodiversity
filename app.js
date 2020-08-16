@@ -87,6 +87,40 @@ function buildPlot(id) {
     // create the bubble plot
     Plotly.newPlot("bubble", data1, layout_b); 
 
+    //create The guage chart
+  
+    var data_g = [
+        {
+        domain: { x: [0, 1], y: [0, 1] },
+        value: parseFloat(wfreq),
+        
+        title: { text: `scrubs per week ` },
+        type: "indicator",
+        
+        mode: "gauge+number",
+        gauge: { axis: { range: [0, 9] },
+                 steps: [
+                  { range: [0, 1], color: "#EEE9E9" },
+                  { range: [1, 2], color: "#F5E4D1" },
+                  { range: [2, 3], color: "#F7E3CC" },
+                  { range: [3, 4], color: "#F3D1AA" },
+                  { range: [4, 5], color: "#EEE9E9" },
+                  { range: [5, 6], color: "#FCC88C" },
+                  { range: [6, 7], color: "#FFCA8E" },
+                  { range: [7, 8], color: "#D4C8B9" },
+                  { range: [8, 9], color: "#B39E83" }
+                ]}
+            
+        }
+      ];
+      var layout_g = { 
+          width: 700, 
+          height: 600, 
+          margin: { t: 20, b: 40, l:100, r:100 } 
+        };
+      Plotly.newPlot("gauge", data_g, layout_g);
+    });
+}  
     
 
 
