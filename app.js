@@ -121,6 +121,32 @@ function buildPlot(id) {
       Plotly.newPlot("gauge", data_g, layout_g);
     });
 }  
+
+        // create the function to get the necessary data
+function buildInfo(id) {
+    // read the json file to get data
+    d3.json("Data/samples.json").then((data)=> {
+        
+        // get the metadata info for the demographic panel
+        var metadata = data.metadata;
+
+        console.log(metadata)
+
+        // filter meta data info by id
+        var result = metadata.filter(meta => meta.id.toString() === id)[0];
+
+        // select demographic panel to put data
+        var demographicInfo = d3.select("#sample-metadata");
+        
+        // empty the demographic info panel each time before getting new id info
+        demographicInfo.html("");
+
+        // grab the necessary demographic data data for the id and append the info to the panel
+        Object.entries(result).forEach((key) => {   
+                demographicInfo.append("h5").text(key[0].toUpperCase() + ": " + key[1] + "\n");    
+        });
+    });
+}
     
 
 
