@@ -147,6 +147,12 @@ function buildInfo(id) {
         });
     });
 }
+
+    // create the function for the change event
+function optionChanged(id) {
+    buildPlot(id);
+    buildInfo(id);
+}
     
 
 
